@@ -1,4 +1,3 @@
-from typing import List
 class Solution:
     def hogehoge(self, s: str) -> int: 
         print (s)
