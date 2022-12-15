@@ -1,3 +1,7 @@
+# 辞書型を使って攻略
+# 他社の回答では、下記が参考になったが、Runtime / Memoryともに誤差だった
+# replace("IV","IIII")で例外処理をすべて基本形に置換してから足すだけ
+# ある文字よりも前に、その文字よりも小さい文字が来た場合（例外処理）もロジックで処理する
 class Solution:
     def romanToInt(self, s: str) -> int:
         
