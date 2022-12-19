@@ -1,4 +1,5 @@
 from typing import Optional
+from typing import List
 
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -7,73 +8,30 @@ class ListNode:
 
 # Noneという値が許されていることを明示されている場合は、引数がオプションであろうがなかろうと、Optionalを使うのが好ましい
 class Solution:
+    # ListNodeをArrayに変換しようと考えたけど、ListNodeのまま処理するほうが良いと方向転換
+    # ListNodeの使い方がいまいちわからないので、Arrayに変換する方法を考えても良いと思う
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        l1 = self.listNode2List(list1)
-        print(l1)
-        l2 = self.listNode2List(list2)
-        print(l2)
-        
-        l = l1 + l2
-        l.sort()
-        node = self.list2ListNode(l)
-        return node
-        
-        
-    def list2ListNode(self,list:[int]):
-        node = ListNode()
-        
-        node.val = list[0]
-        node2 = ListNode()
-        node.next = node2
-        
-        return node
-    
-    
-    
-    
-    def listNode2List(self,list:Optional[ListNode]):
-        l = []
-        while True:
-            l.append(list.val)
-            print(list.val)
-            if list.next == None:
-                break
+        l3_head = ListNode(0)
+        list3 = l3_head
+        while (list1 != None and list2 != None):
+            if list1.val >= list2.val:
+                list3.next = list2
+                list2 = list2.next
             else:
-                list = list.next
-        
-        return l
-            
+                list3.next = list1
+                list1 = list1.next
+            list3 = list3.next
+        if list1:
+            list3.next = list1
+        if list2:
+            list3.next = list2
+
+        return l3_head.next            
         
         
 def main():
-    s = Solution()
-    list1 = [1,2,4]
-    l1 = ListNode()
-    l1.val = 1
-    l2 = ListNode()
-    l2.val = 2
-    l3 = ListNode()
-    l3.val=4
-    l2.next = l3
-    l1.next = l2
-    
-    list2 = [1,3,4]    
-    l21 = ListNode()
-    l21.val = 1
-    l22 = ListNode()
-    l22.val = 3
-    l23 = ListNode()
-    l23.val=4
-    l22.next = l23
-    l21.next = l22
-
-    node = s.mergeTwoLists(l1,l2)
-    print(node.val)
-    return node
-    
-    
-    
-        
+    s = Solution()      
+    s.mergeTwoLists()
 
 if __name__ == "__main__":
     main()
