@@ -1,4 +1,6 @@
 from typing import List
+from typing import Optional
+
 class Solution:
     def hogehoge(self, s: str) -> int: 
         print (s)
