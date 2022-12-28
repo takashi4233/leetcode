@@ -5,11 +5,9 @@ class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
-
-# Noneという値が許されていることを明示されている場合は、引数がオプションであろうがなかろうと、Optionalを使うのが好ましい
+# 19. Remove Nth Node From End of List
+#逆順のリストを持って説いてるひとが多い。
 class Solution:
-    
-    
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         l = self.ListNode2Array(head)
         l.pop(len(l) - n)
