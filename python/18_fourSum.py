@@ -2,6 +2,7 @@ from typing import List
 from typing import Optional
 
 class Solution:
+    # 3 sum に loopを一つ足した作戦
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
         ans = []
         nums.sort()
@@ -11,7 +12,6 @@ class Solution:
                 right = len(nums)-1
 
                 while left < right:
-                    print (f"{nums[i]} + {nums[j]} + {nums[left]} + {nums[right]}")
                     fourSum = nums[i] + nums[j] + nums[left] + nums[right]
                     if fourSum > target:
                         right -= 1
