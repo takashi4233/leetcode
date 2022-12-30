@@ -8,12 +8,12 @@ class ListNode:
 class Solution:
     def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
         list = head
+        # Nodeごと変えようとせずに、Nodeのリンクはそのままに値だけを変更する
         while head and head.next:
             tmp = head.val
             head.val = head.next.val
             head.next.val = tmp
             head = head.next.next
-
         return list
 
     def test(self,input,answer):
