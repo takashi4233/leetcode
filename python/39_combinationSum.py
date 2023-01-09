@@ -2,9 +2,11 @@ from typing import List
 from typing import Optional
 
 class Solution:
+    #　再帰関数で解決する
+    # ２分木の発送で、片方は２を使うことができるが、もう一方は２を使うことができないという条件で木を作っていく
+    # 
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         res = []
-        
         def comb(i,cur,total):
             if total == target:
                 res.append(cur.copy())
@@ -15,10 +17,9 @@ class Solution:
             comb(i,cur,total + candidates[i])
             cur.pop()
             comb(i+1,cur,total)
-            
         comb(0,[],0)
         return res
-            
+
 
     def test(self,input,answer):
         assert input == answer, '期待する値[{1}], 入力値[{0}]'.format(input, answer)
