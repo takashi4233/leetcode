@@ -1,9 +1,9 @@
 import pytest
-import base
+import solution
 
 @pytest.fixture
 def solution_ins():
-    return base.Solution()
+    return solution.Solution()
 
 @pytest.mark.parametrize(('s', 't','expected'), [
     ("hoge","", 3),
