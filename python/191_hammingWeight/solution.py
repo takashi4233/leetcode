@@ -10,7 +10,8 @@ class Solution:
 
 def main():
     s = Solution()
-    input = 0b0000000000000000000000000001011
+    # 2進数なら0b , 8進数なら0o, 16進数なら0xをつければOK
+    input = 0b00000000000000000000000000001011
     output = 3
     s.test(s.hammingWeight(input),output)
 
