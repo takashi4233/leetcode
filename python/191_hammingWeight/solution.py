@@ -2,6 +2,8 @@ from typing import List
 from typing import Optional
 
 class Solution:
+    # ハミング重み（ハミングおもみ、英: Hamming weight）とは、
+    # シンボル列中の 0 以外のシンボルの個数である。典型的には、ビット列中の1の個数として使われる。
     def hammingWeight(self, n: int) -> int:
         return bin(n)[2:].count('1')
 
