@@ -5,6 +5,8 @@ class Solution:
     #お、、、遅いぞ126ms /5.4%
     def isPowerOfTwo(self, n: int) -> bool:
         while n  > 0:
+            if n < 0:
+                return False
             if n == 1:
                 return True
             n = n // 2
