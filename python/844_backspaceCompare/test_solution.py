@@ -10,9 +10,12 @@ def solution_ins():
 @pytest.mark.parametrize(
     ("s", "t", "expected"),
     [
-        ("hoge", "", 3),
-        ("rat", "", False),
+        ("ab#c", "ad#c", True),
+        ("ab##", "c#d#", True),
+        ("a#c", "b", False),
+        ("a##c", "#a#c", True),
+        ("xywrrmp", "xywrrmu#p", True),
     ],
 )
 def test_base(solution_ins, s, t, expected):
-    assert solution_ins.hogehoge(s) == expected
+    assert solution_ins.backspaceCompare(s, t) == expected
