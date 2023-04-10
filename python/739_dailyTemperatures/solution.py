@@ -8,7 +8,7 @@ class Solution:
         stack = []  # decreasing stack常に単調減少になる
 
         for i, temperature in enumerate(temperatures):
-            print(f"i={i},temperature={temperature},stack={stack} ans={ans}")
+            # print(f"i={i},temperature={temperature},stack={stack} ans={ans}")
 
             while stack and temperature > temperatures[stack[-1]]:
                 index = stack.pop()
